@@ -1,4 +1,4 @@
-use super::{Serialize, Field, TableTrait};
+use super::{Serialize, Field, TableTrait, Meta};
 use std::collections::HashMap;
 
 
@@ -9,13 +9,14 @@ pub struct TableUpdatePage <T : Serialize> {
     pub table_name : String,
     pub data : T,
     pub found : bool,
-    pub fields_list : Vec<Field>
+    pub fields_list : Vec<Field>,
+    pub meta : Meta
 }
 
 #[derive(Serialize)]
 pub struct RowNotFound {}
 
-pub fn row_not_found() -> TableUpdatePage<RowNotFound>{
+pub fn row_not_found(meta : Meta) -> TableUpdatePage<RowNotFound>{
     let mut msgs : HashMap<String, String> = HashMap::new();
     msgs.insert("error".to_string(), "Row not found".to_string());
 
@@ -25,7 +26,8 @@ pub fn row_not_found() -> TableUpdatePage<RowNotFound>{
         table_name : String::new(),
         data : RowNotFound {},
         found : false,
-        fields_list : vec![]
+        fields_list : vec![],
+        meta
     }
 }
 
@@ -39,7 +41,8 @@ impl<T : Default + Serialize> TableUpdatePage<T> {
             table_name : String::new(),
             data : T::default(),
             found : true,
-            fields_list : vec![]
+            fields_list : vec![],
+            meta: Meta { app_name: "".to_string(), tables: vec![] }
         }
     }
 
@@ -49,6 +52,10 @@ impl<T : Default + Serialize> TableUpdatePage<T> {
 
     pub fn get_title (&self) -> &str {
         &self.title
+    }
+
+    pub fn set_meta(&mut self, meta : Meta) {
+        self.meta = meta;
     }
 
     pub fn set_table_name(&mut self, table_name : &str) {

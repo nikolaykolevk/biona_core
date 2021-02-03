@@ -38,13 +38,14 @@ pub fn impl_trait(ast: &DeriveInput) -> proc_macro::TokenStream {
     let fields_list = blocks.fields_list;
     let select_all = blocks.select_all;
     let get_table_name = blocks.get_table_name;
-    let select_by_id_block = blocks.select_by_id;
+    let select_by_pr_key_block = blocks.select_by_pr_key;
     let filter = blocks.filter;
     let count_all = blocks.count_all;
     let count_filtered = blocks.count_filtered;
     let insert = blocks.insert;
-    let update_by_id = blocks.update_by_id;
-    let delete_by_id = blocks.delete_by_id;
+    let get_pr_key = blocks.get_pr_key;
+    let update = blocks.update;
+    let delete_by_pr_key = blocks.delete_by_pr_key;
     let prim_key_type = blocks.prim_key_type;
     let select_struct_block = blocks.select_struct;
     let insert_struct_block = blocks.insert_struct;
@@ -96,7 +97,7 @@ pub fn impl_trait(ast: &DeriveInput) -> proc_macro::TokenStream {
 
                 fn select_all(&self, display_count : u32, page: u32) -> Vec<#select_struct_ident> #select_all
 
-                fn select_by_pr_key(&self, find_primary_key: &str) -> Option<#select_struct_ident> #select_by_id_block
+                fn select_by_pr_key(&self, find_primary_key: &str) -> Option<#select_struct_ident> #select_by_pr_key_block
 
                 fn filter(&self, filter_sort: biona_core::models::FilterSort, display_count : u32, page: u32) -> Vec<#select_struct_ident> #filter
 
@@ -106,9 +107,11 @@ pub fn impl_trait(ast: &DeriveInput) -> proc_macro::TokenStream {
 
                 fn insert (&self, new_data: Vec<Self>) -> Vec<#prim_key_type> #insert
 
-                fn update_by_id(&self, update_data: Self, find_primary_key: &str) -> usize #update_by_id
+                fn get_pr_key(&self) -> String #get_pr_key
 
-                fn delete_by_id(&self, find_primary_key: &str) -> QueryResult<usize> #delete_by_id
+                fn update(&self, update_data: Self) -> usize #update
+
+                fn delete_by_pr_key(&self, find_primary_key: &str) -> QueryResult<usize> #delete_by_pr_key
 
             }
         }

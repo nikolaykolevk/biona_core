@@ -4,93 +4,32 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e05980d-8dba-4c02-8b3a-b85682f37903" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bin/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/attribute_types/bool_attribute.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/attribute_types/expr_method_call.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/attribute_types/integer_literal_attribute.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/attribute_types/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/attribute_types/path_attribute.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/attribute_types/string_literal_attribute.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/construct_blocks.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/implementation.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/.rustc_info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/CACHEDIR.TAG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.cargo-lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/biona_macros-f0e490ceb0afe3ed/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/biona_macros-f0e490ceb0afe3ed/output-lib-biona_macros" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-73fd947c31fae330/run-build-script-build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-73fd947c31fae330/run-build-script-build-script-build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-cf89008d60df4b2b/build-script-build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-cf89008d60df4b2b/build-script-build-script-build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-cf89008d60df4b2b/dep-build-script-build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-cf89008d60df4b2b/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-fb67273359fc7082/dep-lib-proc-macro2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-fb67273359fc7082/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-fb67273359fc7082/lib-proc-macro2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/proc-macro2-fb67273359fc7082/lib-proc-macro2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/quote-3ad28b25f553ccf8/dep-lib-quote" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/quote-3ad28b25f553ccf8/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/quote-3ad28b25f553ccf8/lib-quote" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/quote-3ad28b25f553ccf8/lib-quote.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-19dddcc25bec7f72/run-build-script-build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-19dddcc25bec7f72/run-build-script-build-script-build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-af39d657ae753a70/dep-lib-syn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-af39d657ae753a70/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-af39d657ae753a70/lib-syn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-af39d657ae753a70/lib-syn.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-f5e040070b1e1c81/build-script-build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-f5e040070b1e1c81/build-script-build-script-build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-f5e040070b1e1c81/dep-build-script-build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/syn-f5e040070b1e1c81/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/unicode-xid-62e42d52229915de/dep-lib-unicode-xid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/unicode-xid-62e42d52229915de/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/unicode-xid-62e42d52229915de/lib-unicode-xid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/.fingerprint/unicode-xid-62e42d52229915de/lib-unicode-xid.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-73fd947c31fae330/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-73fd947c31fae330/output" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-73fd947c31fae330/root-output" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-73fd947c31fae330/stderr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-cf89008d60df4b2b/build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-cf89008d60df4b2b/build_script_build-cf89008d60df4b2b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/proc-macro2-cf89008d60df4b2b/build_script_build-cf89008d60df4b2b.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-19dddcc25bec7f72/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-19dddcc25bec7f72/output" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-19dddcc25bec7f72/root-output" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-19dddcc25bec7f72/stderr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-f5e040070b1e1c81/build-script-build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-f5e040070b1e1c81/build_script_build-f5e040070b1e1c81" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/build/syn-f5e040070b1e1c81/build_script_build-f5e040070b1e1c81.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/libproc_macro2-fb67273359fc7082.rmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/libquote-3ad28b25f553ccf8.rmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/libsyn-af39d657ae753a70.rmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/libunicode_xid-62e42d52229915de.rmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/proc_macro2-fb67273359fc7082.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/quote-3ad28b25f553ccf8.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/syn-af39d657ae753a70.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/deps/unicode_xid-62e42d52229915de.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/biona_macros/target/debug/incremental/biona_macros-107apgh8oiyax/s-fry0s6ql4z-1dv9h19.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/default_date.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/field.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/filter_sort.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/table_page.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/table_trait.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/table_update_page.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/paths/generate_table_page_and_data.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/paths/generate_table_row_update.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/paths/mod.rs" afterDir="false" />
+    <list default="true" id="6e05980d-8dba-4c02-8b3a-b85682f37903" name="Default Changelist" comment="v1">
+      <change afterPath="$PROJECT_DIR$/src/models/metainfo.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/construct_blocks.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/construct_blocks.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/implementation.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/implementation.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/table_page.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/table_page.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/table_trait.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/table_trait.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/table_update_page.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/table_update_page.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/generate_table_page_and_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/generate_table_page_and_data.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/generate_table_row_update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/generate_table_row_update.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,6 +45,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
   </component>
   <component name="RunManager">
@@ -126,6 +66,7 @@
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="/snap/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -136,6 +77,21 @@
       <option name="presentableId" value="Default" />
       <updated>1611855141007</updated>
     </task>
+    <task id="LOCAL-00001" summary="v1">
+      <created>1611855667709</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611855667709</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v1">
+      <created>1611855728338</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611855728338</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,5 +104,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1" />
   </component>
 </project>

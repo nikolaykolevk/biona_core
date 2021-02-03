@@ -1,6 +1,5 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-#[macro_use]
 extern crate rocket;
 pub extern crate diesel;
 extern crate dotenv;
@@ -14,13 +13,9 @@ pub mod models;
 mod paths;
 
 use diesel::{PgConnection, Connection};
-use rocket::Rocket;
-use rocket_contrib::templates::Template;
 pub use serde::Serialize;
 
-pub fn rocket() -> Rocket {
-    paths::mount_paths(rocket::ignite().attach(Template::fairing()))
-}
+
 
 //returns a connection to the db with authentication info from the .env file
 pub fn establish_connection() -> PgConnection {

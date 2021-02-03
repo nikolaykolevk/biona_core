@@ -1,4 +1,4 @@
-use super::{Serialize, Field, TableTrait};
+use super::{Serialize, Field, TableTrait, Meta};
 use std::collections::HashMap;
 
 //TablePage is used to init a table template
@@ -10,14 +10,15 @@ pub struct TablePage<T : Serialize> {
     pub data : Vec<T>,
     pub data_count : u64,
     pub max_page : u64,
-    pub fields_list : Vec<Field>
+    pub fields_list : Vec<Field>,
+    pub meta : Meta
 }
 
 #[derive(Serialize)]
 pub struct TableNotFound {}
 
 //returns am empty page
-pub fn table_not_found() -> TablePage<TableNotFound>{
+pub fn table_not_found(meta : Meta) -> TablePage<TableNotFound>{
     let mut msgs : HashMap<String, String> = HashMap::new();
     msgs.insert("error".to_string(), "Table not found".to_string());
 
@@ -28,7 +29,8 @@ pub fn table_not_found() -> TablePage<TableNotFound>{
         data : vec![],
         data_count : 0,
         max_page: 1,
-        fields_list : vec![]
+        fields_list : vec![],
+        meta
     }
 }
 
@@ -43,7 +45,11 @@ impl<T : Default + Serialize> TablePage<T> {
             data : vec![],
             data_count : 0,
             max_page: 1,
-            fields_list : vec![]
+            fields_list : vec![],
+            meta : Meta {
+                app_name: "".to_string(),
+                tables: vec![]
+            }
         }
     }
 
@@ -53,6 +59,10 @@ impl<T : Default + Serialize> TablePage<T> {
 
     pub fn get_title (&self) -> &str {
         &self.title
+    }
+
+    pub fn set_meta(&mut self, meta : Meta) {
+        self.meta = meta;
     }
 
     pub fn set_table_name(&mut self, table_name : &str) {

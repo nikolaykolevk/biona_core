@@ -23,6 +23,7 @@ pub fn get_blocks(ast: &DeriveInput, common_items: CommonItems) -> Blocks {
 
     let mut primary_key_schema: syn::Path = parse_quote!(#table_schema::id);
     let mut primary_key_type: syn::Type = parse_quote!(i32);
+    let mut pr_key_field_name: syn::Ident = parse_quote!(id);
     let mut already_one_primary_key = false;
 
 
@@ -67,6 +68,7 @@ pub fn get_blocks(ast: &DeriveInput, common_items: CommonItems) -> Blocks {
                 }
                 primary_key_schema = field_schema.clone();
                 primary_key_type = field_type.clone();
+                pr_key_field_name = field_name.clone();
                 already_one_primary_key = true;
             }
 
@@ -296,7 +298,7 @@ pub fn get_blocks(ast: &DeriveInput, common_items: CommonItems) -> Blocks {
         .expect("Error loading")
     };
 
-    let select_by_id_block = quote! {
+    let select_by_pr_key_block = quote! {
         #fields_select_block
         .filter(#primary_key_schema.eq::<#primary_key_type>(find_primary_key.parse().unwrap()))
         .load::<#select_struct_ident>(&biona_core::establish_connection())
@@ -347,6 +349,9 @@ pub fn get_blocks(ast: &DeriveInput, common_items: CommonItems) -> Blocks {
         }
     );
 
+    let get_pr_key: syn::ExprBlock = parse_quote!({
+            self.#pr_key_field_name.to_string().clone()
+    });
 
     let insert: syn::ExprBlock = parse_quote!({
             let mut insert_vec : Vec<#insert_struct_ident> = Vec::new();
@@ -360,17 +365,18 @@ pub fn get_blocks(ast: &DeriveInput, common_items: CommonItems) -> Blocks {
             .get_results(&biona_core::establish_connection()).unwrap()
     });
 
-    let update_by_id: syn::ExprBlock = parse_quote!({
+    let update: syn::ExprBlock = parse_quote!({
+            let id = update_data.#pr_key_field_name;
             let update_struct : #update_struct_ident = #update_struct_ident::from(update_data);
 
              diesel::update(#table_schema::table)
-                .filter(#primary_key_schema.eq::<#primary_key_type>(find_primary_key.parse().unwrap()))
+                .filter(#primary_key_schema.eq::<#primary_key_type>(id))
                 .set(update_struct)
                 .execute(&biona_core::establish_connection())
                 .unwrap()
     });
 
-    let delete_by_id: syn::ExprBlock = parse_quote!({
+    let delete_by_pr_key: syn::ExprBlock = parse_quote!({
              diesel::delete(#table_schema::table)
             .filter(#primary_key_schema.eq::<#primary_key_type>(find_primary_key.parse().unwrap()))
             .execute(&biona_core::establish_connection())
@@ -388,13 +394,14 @@ pub fn get_blocks(ast: &DeriveInput, common_items: CommonItems) -> Blocks {
         fields_list: parse_quote!({ #fields_list }),
         get_table_name,
         select_all: parse_quote!({ #select_all }),
-        select_by_id: parse_quote!({ #select_by_id_block }),
+        select_by_pr_key: parse_quote!({ #select_by_pr_key_block }),
         filter,
         count_all,
         count_filtered,
         insert,
-        update_by_id,
-        delete_by_id,
+        update,
+        get_pr_key,
+        delete_by_pr_key,
         prim_key_type: primary_key_type,
         select_struct: parse_quote!(pub struct #select_struct_ident { #select_struct_block }),
         insert_struct: parse_quote!(pub struct #insert_struct_ident { #insert_struct_block }),

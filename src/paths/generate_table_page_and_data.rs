@@ -12,7 +12,7 @@
 
 #[macro_export]
 macro_rules! generate_table_page_and_table_data {
-    ($($match_case : expr, $struct : ident, $title : expr ),*) => {
+    ($meta : expr, $($match_case : expr, $struct : ident, $title : expr ),*) => {
 
         #[get("/<table>?<index>&<dc>&<f_names>&<f_op>&<f_values>&<f_or>&<s_name>&<s_asc>")]
         pub fn table_page(table : String, dc : Option<String>, index : Option<String>, f_names : Option<String>, f_op : Option<String>, f_values : Option<String>, f_or : Option<String>, s_name : Option<String>, s_asc : Option<String>) -> biona_core::rocket_contrib::templates::Template {
@@ -37,6 +37,7 @@ macro_rules! generate_table_page_and_table_data {
                         let table : Box<dyn TableTrait<_, _>> = <$struct>::new_boxed();
                         let mut table_page: TablePage<_> = <$struct>::new_boxed().into();
                         table_page.set_data(table.filter(filter_sort.clone() ,display_count, page));
+                        table_page.set_meta($meta);
                         let data_count = table.count_filtered(filter_sort);
                         if (data_count% (display_count as u64) == (0 as u64)) {
                             max_page = data_count / (display_count as u64);
@@ -48,11 +49,11 @@ macro_rules! generate_table_page_and_table_data {
                         table_page.set_max_page(max_page);
                         table_page.set_data_count(data_count);
                         table_page.set_title($title);
-                        biona_core::rocket_contrib::templates::Template::render("table/page", &table_page)
+                        biona_core::rocket_contrib::templates::Template::render("components/master_table/view", &table_page)
                     },
                     )*
                     _ => {
-                        biona_core::rocket_contrib::templates::Template::render("table/not_found", &biona_core::models::table_not_found())
+                        biona_core::rocket_contrib::templates::Template::render("components/master_table/not_found", &biona_core::models::table_not_found($meta))
                     }
                 }
             }
@@ -91,14 +92,59 @@ macro_rules! generate_table_page_and_table_data {
                         table_page.set_max_page(max_page);
                         table_page.set_data_count(data_count);
                         table_page.set_title($title);
-                        biona_core::rocket_contrib::templates::Template::render("table/table", &table_page)
+                        biona_core::rocket_contrib::templates::Template::render("components/master_table/table", &table_page)
                     },
                     )*
                     _ => {
-                        let table_page: TablePage<_> = table_not_found();
-                        biona_core::rocket_contrib::templates::Template::render("table/table", &table_page)
+                        let table_page: TablePage<_> = table_not_found($meta);
+                        biona_core::rocket_contrib::templates::Template::render("components/master_table/table", &table_page)
                     }
                 }
         }
+
+
+        #[get("/<table>/table_component?<index>&<dc>&<f_names>&<f_op>&<f_values>&<f_or>&<s_name>&<s_asc>")]
+        pub fn table_component(table : String, dc : Option<String>, index : Option<String>, f_names : Option<String>, f_op : Option<String>, f_values : Option<String>, f_or : Option<String>, s_name : Option<String>, s_asc : Option<String>) -> biona_core::rocket_contrib::templates::Template {
+
+            use biona_core::models::*;
+
+            let filter_sort = FilterSort::from_option_string(f_names, f_op, f_values, f_or, s_name, s_asc);
+            let index: u32 = index.unwrap_or_else(|| "1".to_string()).parse().unwrap_or_else(|_| 1);
+            let display_count : u32 = dc.unwrap_or_else(|| "50".to_string()).parse().unwrap_or_else(|_| 50);
+
+            let mut page = 1;
+            if (index > 0) {
+                page = index;
+            }
+
+            let max_page;
+
+
+
+                return match table.to_lowercase().as_str() {
+                    $($match_case => {
+                        let table : Box<dyn TableTrait<_, _>> = <$struct>::new_boxed();
+                        let mut table_page: TablePage<_> = <$struct>::new_boxed().into();
+                        table_page.set_data(table.filter(filter_sort.clone() ,display_count, page));
+                        table_page.set_meta($meta);
+                        let data_count = table.count_filtered(filter_sort);
+                        if (data_count% (display_count as u64) == (0 as u64)) {
+                            max_page = data_count / (display_count as u64);
+                        }
+                        else {
+                            max_page = data_count / (display_count as u64) + (1 as u64);
+                        }
+
+                        table_page.set_max_page(max_page);
+                        table_page.set_data_count(data_count);
+                        table_page.set_title($title);
+                        biona_core::rocket_contrib::templates::Template::render("components/master_table/component", &table_page)
+                    },
+                    )*
+                    _ => {
+                        biona_core::rocket_contrib::templates::Template::render("components/master_table/not_found", &biona_core::models::table_not_found($meta))
+                    }
+                }
+            }
     }
 }

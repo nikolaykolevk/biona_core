@@ -25,12 +25,19 @@ pub trait TableTrait<SelectStruct : Serialize, PrimKey>
 
     fn insert (&self, new_data : Vec<Self>) -> Vec<PrimKey> where Self : Sized;
 
-    fn update_by_id(&self, update_data : Self, find_primary_key: &str) -> usize where Self : Sized;
+    fn update(&self, update_data : Self) -> usize where Self : Sized;
 
-    fn delete_by_id(&self, find_primary_key: &str) -> QueryResult<usize>;
+    fn update_from_json<'a>(&self, update_data : &'a str) -> usize where Self : Sized + serde::Deserialize<'a>  + std::fmt::Debug {
+        let update_struct : Self = serde_json::from_str(update_data).unwrap();
+        println!("{:?}", update_struct);
+        self.update(update_struct)
+    }
 
+    fn delete_by_pr_key(&self, find_primary_key: &str) -> QueryResult<usize>;
 
-    fn select_by_id_as_json(&self, find_primary_key: &str) -> String where Self : Sized + Serialize{
+    fn get_pr_key(&self) -> String;
+
+    fn select_by_pr_key_as_json(&self, find_primary_key: &str) -> String where Self : Sized + Serialize{
         serde_json::to_string(&self.select_by_pr_key(find_primary_key)).unwrap()
     }
 
