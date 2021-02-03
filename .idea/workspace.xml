@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e05980d-8dba-4c02-8b3a-b85682f37903" name="Default Changelist" comment="v1">
-      <change afterPath="$PROJECT_DIR$/src/models/metainfo.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/construct_blocks.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/construct_blocks.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/implementation.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/implementation.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/biona_macros/src/impl_table_trait/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/table_page.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/table_page.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/table_trait.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/table_trait.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/table_update_page.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/table_update_page.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/generate_table_page_and_data.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/generate_table_page_and_data.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/generate_table_row_update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/generate_table_row_update.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
